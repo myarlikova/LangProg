@@ -2,7 +2,7 @@ class pr002 {
 	public static void main(String args [])
 			throws java.io.IOException {
 		int intg = 10, intgr = 20;
-		char ch, answer = 'R' ;
+/*		char ch, answer = 'R' ;
 		ch = (char) System.in.read();
 		if (ch == answer)
 			System.out.println("Угадали буквы");
@@ -13,7 +13,7 @@ class pr002 {
 			else
 				System.out.println("Выше, чем указанная");
 		}
-
+*/
 		boolean bool;
 		//int i;
 		for(int i=0; i<10; i++)
@@ -44,7 +44,35 @@ class pr002 {
 		System.out.println("\n");
 		//оператор for
 		for(int i=0, j=10; i<j; i++, j--)
-			System.out.println("i и j: " + i + " " + j);
+			System.out.println("i и j: " + i + " " + j + "\n");
+
+		for(int i=0,i<10;) {
+			System.out.println("Проход №" + i);
+			i++;
+		}
+		//бесконечный цикл
+		//for (;;);
+		for (int i=1; i<5; sum += i++);
+		System.out.println("\nСумма равна: " + sum);
+
+		System.out.println("\n");
+		//цикл while
+		char ch1 = 'a';
+		while(ch1 <= 'z') {
+			System.out.print(ch1 " ");
+			ch1++;
+
+		}
+		System.out.println();
+		System.out.println(((int) 'е') + " " + ((int) 'ё')  + "" ((int) 'ё')) ;
+
+		System.out.println("\n");
+		//цикл do while
+		char ch2;
+		do {
+			 System.out.print("введите символ и нажмите \"RETURN\": ");
+			 ch2 = (char) System.in.read();
+		} while (ch2 != 'q');
 
 	}
 }
