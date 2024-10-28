@@ -41,6 +41,10 @@ class pr002 {
 			System.out.println("bool равен true");
 		else
 			System.out.println("bool равен false");
+		System.out.println("\n");
+		//оператор for
+		for(int i=0, j=10; i<j; i++, j--)
+			System.out.println("i и j: " + i + " " + j);
 
 	}
 }
