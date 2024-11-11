@@ -25,22 +25,22 @@ class Arrays {
 	//Находим максимальное и минимальное значение в массиве
 	int min, max;
 	min = max =nums[0];
-	for(int i = 0; i < 10; i++)
+	for(int i = 0; i < 10; i++){
 		if(nums[i] < min) = nums[i];
 		if(nums[i] > max) = nums[i];
 	}	
-	System.out.println();
+	System.out.println("Min: " + min"\nMax: " + max));
 	System.out.println();
 
 	//Альтернативная форма инициализации массива:
 	int x = 10;
 	int[] nums1 ={32, -42, 1132, 53,124,94,x,-522,-10,11};
 	min = max =nums[0];
-        for(int i = 0; i < 10; i++)
+        for(int i = 1; i < 10; i++){
                 if(nums[i] < min) = nums1[i];
                 if(nums[i] > max) = nums1[i];
         }
-        System.out.println("Min": + min "Max" + max);
+        System.out.println("Min: " + min"\nMax: " + max);
         System.out.println();
 }
 
