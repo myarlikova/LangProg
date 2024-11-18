@@ -12,9 +12,9 @@ class Strings {
 		//Проверка на эквивалентность boolean enqals(str)
 		
 		boolean eq;
-		eq = str.enquals(str2);
+		eq = str.equals(str2);
 		System.out.println("Строки str str2 эквивалентны " + eq);
-		eq = str.enquals(str3);
+		eq = str.equals(str3);
 		System.out.println("Строки str str3 эквивалентны " + eq);
 
 
@@ -24,11 +24,11 @@ class Strings {
 
 		//Извлечение символа по индексу char  charAt(index)
 		char ch;
-		ch = charAt(3);
+		ch = str.charAt(3);
 		System.out.println("В строке под индексом 3: " + ch);
 
-		for (int i = 0; i < length(); i++)
-			System.out.println((str.charAt(i));
+		for (int i = 0; i < str.length(); i++)
+			System.out.println(str.charAt(i));
 		System.out.println();
 
 		System.out.println();
@@ -105,6 +105,7 @@ class Strings {
 		System.out.println(strblk);
 
 		//Аргументы коммандной строки
+		
 		System.out.println("Количество параметров, переданных программе: " + args.length);
 		System.out.println("Список параметров: ");
 		for (int i = 0; i<args.length; i++)
@@ -112,21 +113,24 @@ class Strings {
 		System.out.println();
 
 		String [][] phoneNumbers = {
-			{"Авторемонт" "383-262-25-0"},
-			{"Деканат" "244-85-10"},
-			{"Поликлиника" "353-01-02"},
-			{"Сантехник" "206-08-11"},
+			{"Авторемонт", "383-262-25-0"},
+			{"Деканат", "244-85-10"},
+			{"Поликлиника", "353-01-02"},
+			{"Сантехник", "206-08-11"},
 		};
+		int i2;
 		if (args.length != 1)
 			System.out.println("Usage: java Strings <Наименование>");
 		else {
-			for (int i2=0; i2<phoneNumbers.length; i2++) {
+			for (i2=0; i2<phoneNumbers.length; i2++) {
 				if(phoneNumbers[i2][0].equals(args[0])) {
 					System.out.println(phoneNumbers[i2][0] + ":" + phoneNumbers[i2][1]);
 					break;
 				}
 			}
-			if()
+			if(i2==phoneNumbers.length)
+				System.out.println("Ничего не найдено");
+		}
 
 
 
