@@ -1,8 +1,12 @@
-class TwoDShape {
+abstract class TwoDShape {
 	private double width;
 	private double height;
+	final int CONST1 = 1;
+	final int CONST2 = 2;
+	final int CONST3 = 3;
 	String name;
 	int i = 100;
+
 	TwoDShape(double w, double h) {
 		if (h > 29.7)
                         height = 29.7;
@@ -49,11 +53,15 @@ class TwoDShape {
 	}
 	*/
 
-
+	/*
 	double area() {
 		System.out.println("Метод должен быть переопределен!");
 		return 0.0;
-	}
+	*/
+
+	//Метод который гобязательно должен переопределиться внутри класса
+	abstract double area();
+	abstract void getMsg();
 }
 
 class Triangle extends TwoDShape {
@@ -78,7 +86,6 @@ class Triangle extends TwoDShape {
 		return super.name;
 	}
 	*/
-
 	
 
 }
@@ -92,6 +99,14 @@ class ColorTriangle extends Triangle {
 	}
 	void showColor() {
 		Systeem.out.println("Цвет: " + color);
+	}
+/*	void getMsg() {
+                System.out.println("Цвет " + color);
+        }
+*/
+
+	String toString() {
+		return "Цветной треугольник";
 	}
 
 }
@@ -111,18 +126,29 @@ class Rectangle extends TwoDShape {
 			return true;
 		return false;
 	}
+	final void getMsg() {
+		System.out.println();
+	}
 }
 
+final class X {
+	int x = 10;
+}
+/*
+class Y extends X {
+	int y = 20;
+}
+*/
 class Interihance {
 	public static void main(String[] args) {
-	TwoDShape fig1 = new TwoDShape(20.0, 30.0);
+	TwoDShape fig1 = //new TwoDShape(20.0, 30.0);
 	Triangle t1 = new Triangle("Закрашенный", 4.5, 7.0);
-	Triangle t2 = new ColorTriangle("Синий","Контурный", 3.5, 8.0);
+	ColorTriangle t2 = new ColorTriangle("Синий","Контурный", 3.5, 8.0);
 	Rectangle r1 = new Rectangle("Сплошная линия" 5.0, 5.0);
 	Rectangle r2 = new Rectangle("Пунктирная линия", 5.0, 7.0);
 	System.out.println(" ");
-	System.out.println("fig1" + fig1.name);
-	fig1.showDim();
+	//System.out.println("fig1" + fig1.name);
+	//fig1.showDim();
 	System.out.println("t1:" + t1.name);
 	t1.showStyle();
 	System.out.println("Площадь" + t1.area());
@@ -150,6 +176,7 @@ class Interihance {
 	fig1 = t1;
 	System.out.println("Ширина треугольника, на который ссылается fig1"fig1.getWidth());
 	System.out.println("Имя фигуры: " + fig1.name);
+	fig1.getMsg();
 
 	//при указании на объект подкласса выполняется вычислние площади треугольника
 	fig1.area();
@@ -167,7 +194,10 @@ class Interihance {
 	t2.showColor();
 	System.out.println("Площадь цветного треугольника" + fig1.area());
 	System.out.println("Имя фигуры: " + fig1.name);
-
+	fig1.getMsg();
+	System.out.println((fig1.CONST1 + fig1.CONST2 + fig1.CONST3));
+	//Izmenit nelzia
+	//fig1.CONST1 = 333;
 
 	//Доступ к членам подкласса для ссылочных переменных суперкласса закрыт
 	//System.out.println(fig1.style);
@@ -181,8 +211,15 @@ class Interihance {
 	*/
 	
 
-
-
+	//Использование класса Object
+	Object obj1;
+	System.out.println(t1.getClass());
+	System.out.println(t2.getClass());
+	System.out.println(t1.hashCode() + t2.hashCode());
+	System.out.println(t1.toString() + t2.toString());
+	System.out.println(t1.equals(t2));
+	t1= t2;
+	System.out.println(t1.equals(t2));
 
 
 	}
